@@ -1,0 +1,64 @@
+@use "../../../assets/style/setup/variables" as v;
+
+.includ-files {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    .container-files {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-between;
+
+
+        .single-file {
+            width: 150px;
+            // padding: 5px;
+            // height: 225px;
+            border: 2px solid v.$clr4;
+            border-radius: 3px;
+            overflow: hidden;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+
+            .file-img {
+                padding: 5px;
+            }
+
+        }
+    }
+
+    .container-file-button {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        border-top: 2px solid v.$clr4;
+        padding: 5px;
+
+        .file-button {
+            cursor: pointer;
+            padding: 2px;
+        }
+    }
+}
+
+
+.container-plus-button {
+    cursor: pointer;
+    position: fixed;
+    bottom: 75px;
+    left: v.$layoutPadding + 10px;
+    width: 50px;
+    border-radius: 100%;
+    padding: 10px;
+    border: 2px solid v.$clr4;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+
+img {
+    position: relative !important;
+}

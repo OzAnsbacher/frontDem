@@ -1,0 +1,31 @@
+@use "../setup/variables" as v;
+@use "../setup/mixins" as m;
+
+.main-layout {
+    display: grid;
+    grid-template-columns: v.$layoutPadding 1fr v.$layoutPadding;
+    
+    > * {
+      grid-column: 2;
+    }
+
+    > *.full {
+      grid-column: 1 / -1;
+    }
+
+    @include m.for-mobile-layout {
+      @include m.layoutGTC(v.$break-mobile);
+    }
+    @include m.for-narrow-layout {
+      @include m.layoutGTC(v.$break-narrow);
+    }
+    @include m.for-normal-layout {
+      @include m.layoutGTC(v.$break-normal);
+    }
+    @include m.for-wide-layout {
+      @include m.layoutGTC(v.$break-wide);
+    }
+    @include m.for-huge-layout {
+      @include m.layoutGTC(v.$break-huge);
+    }
+}

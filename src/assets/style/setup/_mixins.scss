@@ -1,0 +1,118 @@
+@use "../setup/variables" as v; 
+
+// Mixin עבור עיצוב מובייל
+@mixin for-mobile-layout {
+  @media (max-width: v.$break-mobile) {
+    @content;
+    .header-container {
+      flex-direction: column;
+      align-items: stretch;
+      a {
+        margin-right: auto;
+      }
+      nav {
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+// Mixin עבור עיצוב מסכים צרים
+@mixin for-narrow-layout {
+  @media (min-width: v.$break-narrow) {
+    @content;
+    .video-container {
+      height: v.$break-narrow * 0.6;
+    }
+  }
+}
+
+// Mixin עבור עיצוב רגיל
+@mixin for-normal-layout {
+  @media (min-width: v.$break-normal) {
+    @content;
+    .video-container {
+      height: v.$break-normal * 0.57;
+    }
+  }
+}
+
+// Mixin עבור עיצוב רחב
+@mixin for-wide-layout {
+  @media (min-width: v.$break-wide) {
+    @content;
+    .video-container {
+      height: v.$break-wide * 0.57;
+    }
+  }
+}
+
+// Mixin עבור עיצוב ענק
+@mixin for-huge-layout {
+  @media (min-width: v.$break-huge) {
+    @content;
+    .video-container {
+      height: v.$break-huge * 0.57;
+    }
+  }
+}
+
+// Mixin לפריסת Grid
+@mixin layoutGTC($max) {
+  grid-template-columns:
+    minmax(v.$layoutPadding, 1fr)
+    minmax(auto, $max)
+    minmax(v.$layoutPadding, 1fr);
+}
+
+/* Media Mixins */
+// Mixin ליחס תמונה (Aspect Ratio)
+@mixin aspect-ratio($width: 1, $height: 1) {
+  position: relative;
+  overflow: hidden;
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  > img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Mixin לעיצוב קלט משחק
+@mixin input-game {
+  border: solid 2px v.$clr1;
+  padding: 0.5em 1.2em;
+  margin-bottom: 0.5em;
+  ::placeholder {
+    color: v.$clr1;
+  }
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+// Mixin לעיצוב רכיבי טופס
+@mixin element-form {
+  border-radius: 5px;
+  font-size: 1.2em;
+  font-family: "Gan", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+// Mixin לכפתורי טופס
+@mixin btn-form {
+  background-color: v.$clr2;
+  color: whitesmoke;
+  padding: 0.8em 1.2em;
+  text-decoration: none;
+}

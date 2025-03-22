@@ -1,0 +1,25 @@
+@use "../../../../assets/style/setup/variables" as v;
+
+
+.container-plus-button {
+    cursor: pointer;
+    position: fixed;
+    bottom: 75px;
+    left: v.$layoutPadding + 10px;
+    width: 50px;
+    border-radius: 100%;
+    padding: 10px;
+    border: 2px solid v.$clr4;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+    label{
+        cursor: pointer;
+    }
+}
+
+img {
+    position: relative !important;
+}

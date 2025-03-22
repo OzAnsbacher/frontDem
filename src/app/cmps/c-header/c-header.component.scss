@@ -1,0 +1,18 @@
+@use "../../../assets/style/setup/variables" as v;
+
+.includ-header {
+    background-color: v.$clr1;
+    font-family: "Lato";
+    padding: 1.3em 0;
+    box-shadow: 1px 2px 6px 2px #d1d3d4;
+
+    * {
+        font-family: inherit;
+    }
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

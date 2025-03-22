@@ -1,0 +1,12 @@
+@use "../../../assets/style/setup/variables" as v;
+
+.includ-footer {
+    background-color: v.$clr3;
+    padding: 1.3em 0;
+    box-shadow: 1px 2px 6px 2px #d1d3d4;
+    font-family: "Batesin";
+    *{
+      font-family: inherit;  
+    }
+}
+

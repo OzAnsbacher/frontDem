@@ -1,0 +1,29 @@
+<div class="includ-files main-layout">
+    
+    <div *ngIf="files" class="container-files">
+       
+        <div class="single-file" *ngFor="let file of files">
+            <div class="file-preview">
+                <div class="file-img">
+                    <img ngSrc={{getFileImage(file)}} fill>
+                </div>
+            </div>
+            <div class="container-file-button">
+                <div class="file-button">
+                    <img class="file-button" ngSrc={{downloadImg}} fill>
+                </div>
+                <div class="file-button">
+                    <img class="file-button" ngSrc={{deleteImg}} fill>
+                </div>
+                <div class="file-button">
+                    <img class="file-button" ngSrc={{openImg}} fill>
+                </div>
+            </div>
+        </div>
+       
+
+    </div>
+
+    <upload-button></upload-button>
+   
+</div>
